@@ -10,8 +10,8 @@ class App extends Component {
   state = {
     city: '',
     country: '',
-    temperature: 0,
-    humidity: 0,
+    temperature: '',
+    humidity: '',
     description: '',
     error: undefined
   }
@@ -35,7 +35,13 @@ class App extends Component {
     return (
       <div className="App">
         <Form getWeather={this.getWeather}/>
-        <Weather />
+        <Weather 
+          city = {this.state.city}
+          country = {this.state.country}
+          temperature = {this.state.temperature}
+          humidity = {this.state.humidity}
+          description = {this.state.description}
+        />
       </div>
     );
   }
