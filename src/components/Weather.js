@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 class Weather extends Component {
     render() {
         return (
-            <div>
+            <div className='weatherinfo'>
                 {/* conditional statements -- will only show the 'p' tags if 'true' */}
-                {this.props.temperature && <p>{this.props.temperature}</p>}
-                {this.props.city && this.props.country && <p>{this.props.city}, {this.props.country}</p>}
+                {this.props.temperature && 
+                    <p className='display-2 temperature'>{this.props.temperature}F</p>}
+                {this.props.city && this.props.country && 
+                    <p className='display-4'>{this.props.city}, {this.props.country}</p>}
                 {this.props.humidity && <p>Humidity:{this.props.humidity}</p>}
                 {this.props.description && <p>Conditions:{this.props.description}</p>}
                 {this.props.error && <p>{this.props.error}</p>}

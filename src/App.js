@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import './App.css';
+import './App.css';
 import Form from './components/Form';
 import Weather from './components/Weather';
+
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 
@@ -45,16 +46,25 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Form getWeather={this.getWeather}/>
-        <Weather 
-          city = {this.state.city}
-          country = {this.state.country}
-          temperature = {this.state.temperature}
-          humidity = {this.state.humidity}
-          description = {this.state.description}
-          error = {this.state.error}
-        />
+      <div>
+        <h1>React Weather Search</h1>
+        <div className='weatherContainer'>
+          <Form getWeather={this.getWeather}/>
+          <Weather 
+            city = {this.state.city}
+            country = {this.state.country}
+            temperature = {this.state.temperature}
+            humidity = {this.state.humidity}
+            description = {this.state.description}
+            error = {this.state.error}
+          />
+
+        </div>
+
+        <img src='imgs/cloud.png' alt='' className='cloud' id='cloud1'/>
+        <img src='imgs/cloud.png' alt='' className='cloud' id='cloud2'/>
+        <img src='imgs/cloud.png' alt='' className='cloud' id='cloud3'/>
+        
       </div>
     );
   }

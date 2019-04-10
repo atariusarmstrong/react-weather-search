@@ -1,33 +1,72 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: solid black 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+.weatherContainer {
+  border: solid #707070 2px;
+  border-radius: 10px;
+  width: 40vw;
+  height: 60vh;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px;
+}
+
+body {
+  background-color: #84EADC;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.temperature {
+  text-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px darkblue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cloud {
+  z-index: -1;
+  width: 20%;
+  height: 20%;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 
-.App-link {
-  color: #61dafb;
+#cloud1 {
+  animation-duration: 20s;
+  position: absolute;
+  top: 20px;
 }
 
-@keyframes App-logo-spin {
+#cloud2 {
+  animation-duration: 30s;
+  position: absolute;
+  top: 150px;
+}
+
+#cloud3{
+  animation-duration: 15s;
+  position: absolute;
+  top: 400px;
+}
+
+@keyframes slidein {
   from {
-    transform: rotate(0deg);
+    margin-left: -20%;
+
   }
+
   to {
-    transform: rotate(360deg);
+    margin-left: 100%;
+
   }
 }
